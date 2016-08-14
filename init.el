@@ -112,6 +112,18 @@
 ;; Powerline
 (require 'powerline)
 (powerline-default-theme)
+(custom-set-faces
+ '(powerline-arrow-shape 'arrow)
+ '(mode-line ((t (:foreground "#030303" :background "#6d0204" :box nil))))
+ '(mode-line-inactive ((t (:foreground "#ffffff" :background "#5d6365" :box nil))))
+ '(powerline-active1 ((t (:foreground "#f9f9f9" :background "#ff6365" :box nil))))
+ '(powerline-active2 ((t (:foreground "#f9f9f9" :background "#5d6365" :box nil))))
+ '(mode-line-buffer-id ((t (:foreground "#000000" :bold t))))
+)
+
+;; Markdown
+(custom-set-variables
+ '(markdown-command "/usr/local/bin/pandoc -c ~/.emacs.d/github-pandoc.css --from markdown_github -t html5 --mathjax --highlight-style pygments --standalone"))
 
 ;;;; AutoComplete Family
 ;; Helm
@@ -131,6 +143,3 @@
 (add-to-list 'ac-modes 'web-mode)
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
-
-(custom-set-variables
- '(markdown-command "/usr/local/bin/pandoc -c ~/.emacs.d/github-pandoc.css --from markdown_github -t html5 --mathjax --highlight-style pygments --standalone"))
