@@ -52,6 +52,10 @@
 ;; Basic: Use spaces instead spaces
 (setq-default indent-tabs-mode nil)
 
+;; Basic: Maximize Buffer
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
+
 ;;;; AutoComplete Family
 ;; Helm Mode
 (require 'helm)
