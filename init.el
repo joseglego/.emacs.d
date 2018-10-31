@@ -186,7 +186,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm flycheck exec-path-from-shell darkokai-theme color-theme))))
+    (multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm flycheck exec-path-from-shell darkokai-theme color-theme))))
 
 ;;;; AutoComplete Family
 ;; Helm Mode
@@ -323,3 +323,14 @@
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
           '(json-jsonlist)))
+
+;; Multiple-Cursors
+(require 'multiple-cursors)
+;; When you have an active region that spans multiple lines, the following will add a cursor to each line:
+
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; When you want to add multiple cursors not based on continuous lines, but based on keywords in the buffer, use:
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
