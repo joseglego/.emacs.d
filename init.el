@@ -186,7 +186,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm flycheck exec-path-from-shell darkokai-theme color-theme))))
+    (react-snippets multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm flycheck exec-path-from-shell darkokai-theme color-theme))))
 
 ;;;; AutoComplete Family
 ;; Helm Mode
@@ -207,6 +207,7 @@
 ;;; yasnippet
 ;;; should be loaded before auto complete so that they can work together
 (require 'yasnippet)
+(require 'react-snippets)
 (yas-global-mode 1)
 
 ;;; auto complete mod
