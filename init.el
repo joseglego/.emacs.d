@@ -318,6 +318,7 @@
 
 ;; customize flycheck temp file prefix
 (setq-default flycheck-temp-prefixs ".flycheck")
+(setq-default flycheck-stylelintrc ".stylelintrc")
 
 ;; disable json-jsonlist checking for json files
 (setq-default flycheck-disabled-checkers
