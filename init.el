@@ -95,6 +95,7 @@
 
 ;; Web Mode: Begin
 (require 'web-mode)
+(require 'vue-mode)
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
@@ -102,8 +103,10 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[pdj]html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[s]css\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.es6\\'" . web-mode))
-
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.axlsx\\'" . ruby-mode))
 
 ;; WebMode: Style-Gook
 (defun my-web-mode-hook ()
@@ -128,6 +131,7 @@
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
+(setq web-mode-script-padding 2)
 (setq js-indent-level 2)
 (setq js-highlight-level 3)
 (setq web-mode-code-indent-offset 2)
@@ -135,6 +139,7 @@
 (setq js-highlight-level 3)
 (setq typescript-indent-offset 2)
 (setq typescript-indent-level 2)
+(setq scss-indent-offset 2)
 
 (add-hook 'web-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'html-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -181,7 +186,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm flycheck exec-path-from-shell darkokai-theme color-theme))))
+    (multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm flycheck exec-path-from-shell darkokai-theme color-theme))))
 
 ;;;; AutoComplete Family
 ;; Helm Mode
@@ -313,8 +318,24 @@
 
 ;; customize flycheck temp file prefix
 (setq-default flycheck-temp-prefixs ".flycheck")
+(setq-default flycheck-stylelintrc ".stylelintrc")
 
 ;; disable json-jsonlist checking for json files
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
           '(json-jsonlist)))
+
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
+
+;; Multiple-Cursors
+(require 'multiple-cursors)
+;; When you have an active region that spans multiple lines, the following will add a cursor to each line:
+
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; When you want to add multiple cursors not based on continuous lines, but based on keywords in the buffer, use:
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
