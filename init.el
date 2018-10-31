@@ -324,6 +324,10 @@
   (append flycheck-disabled-checkers
           '(json-jsonlist)))
 
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
+
 ;; Multiple-Cursors
 (require 'multiple-cursors)
 ;; When you have an active region that spans multiple lines, the following will add a cursor to each line:
