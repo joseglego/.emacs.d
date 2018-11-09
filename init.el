@@ -103,7 +103,8 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[pdj]html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[s]css\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.axlsx\\'" . ruby-mode))
@@ -140,6 +141,7 @@
 (setq typescript-indent-offset 2)
 (setq typescript-indent-level 2)
 (setq scss-indent-offset 2)
+(setq json-reformat:indent-width 2)
 
 (add-hook 'web-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'html-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -186,7 +188,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (react-snippets multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm flycheck exec-path-from-shell darkokai-theme color-theme))))
+    (ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm flycheck exec-path-from-shell darkokai-theme color-theme))))
 
 ;;;; AutoComplete Family
 ;; Helm Mode
@@ -261,7 +263,7 @@
 ;;
 (require 'rbenv)
 (global-rbenv-mode)
-(rbenv-use "2.4.2")
+(rbenv-use "2.4.4")
 
 
 ;; Basic: JSDoc Mode
@@ -281,6 +283,7 @@
 
 ;; Associates json-mode to all .eslintrc files
 (add-to-list 'auto-mode-alist '("\\.eslintrc\\'" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.eslintrc\\'" . rjsx-mode))
 
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
   (if (equal web-mode-content-type "js")
@@ -299,6 +302,7 @@
   (append flycheck-disabled-checkers
           '(javascript-jshint)))
 
+;; use eslint with web-mode for jsx files
 (add-to-list 'flycheck-checkers 'javascript-eslint)
 (add-to-list 'flycheck-checkers 'scss-stylelint)
 (add-to-list 'flycheck-checkers 'ruby-rubocop)
@@ -309,6 +313,7 @@
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 (flycheck-add-mode 'javascript-eslint 'js2-mode)
+(flycheck-add-mode 'javascript-eslint 'rjsx-mode)
 (flycheck-add-mode 'scss-stylelint 'scss-mode)
 (flycheck-add-mode 'ruby-rubocop 'ruby-mode)
 (flycheck-add-mode 'python-flake8 'python-mode)
