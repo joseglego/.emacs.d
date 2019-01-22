@@ -217,6 +217,7 @@
 ;;; should be loaded after yasnippet so that they can work together
 (require 'auto-complete)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/snippets")
 (ac-config-default)
 (add-to-list 'ac-modes 'web-mode)
 (ac-set-trigger-key "TAB")
