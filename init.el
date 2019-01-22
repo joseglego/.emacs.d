@@ -180,6 +180,7 @@
    "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(setq markdown-command "pandoc -c ~/github-pandoc.css -s")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -188,7 +189,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm flycheck exec-path-from-shell darkokai-theme color-theme))))
+    (markdown-preview-eww ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm exec-path-from-shell darkokai-theme color-theme))))
 
 ;;;; AutoComplete Family
 ;; Helm Mode
