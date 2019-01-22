@@ -334,7 +334,7 @@
           '(json-jsonlist)))
 
 ;; Magit
-(global-set-key (kbd "C-x g") 'magit-status)
+(setq magit-save-repository-buffers nil)
 
 ;; Multiple-Cursors
 (require 'multiple-cursors)
