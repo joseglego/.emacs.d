@@ -108,6 +108,7 @@
 (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.axlsx\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.builder\\'" . ruby-mode))
 
 ;; WebMode: Style-Gook
 (defun my-web-mode-hook ()
@@ -305,7 +306,7 @@
           '(javascript-jshint)))
 
 ;; use eslint with web-mode for jsx files
-(add-to-list 'flycheck-checkers 'javascript-eslint)
+(add-to-list 'flycheck-checkers 'javascript-standard)
 (add-to-list 'flycheck-checkers 'scss-stylelint)
 (add-to-list 'flycheck-checkers 'ruby-rubocop)
 (add-to-list 'flycheck-checkers 'typescript-tslint)
@@ -313,9 +314,9 @@
 (add-to-list 'flycheck-checkers 'html-tidy)
 
 ;; use eslint with web-mode for jsx files
-(flycheck-add-mode 'javascript-eslint 'web-mode)
-(flycheck-add-mode 'javascript-eslint 'js2-mode)
-(flycheck-add-mode 'javascript-eslint 'rjsx-mode)
+(flycheck-add-mode 'javascript-standard 'web-mode)
+(flycheck-add-mode 'javascript-standard 'js2-mode)
+(flycheck-add-mode 'javascript-standard 'rjsx-mode)
 (flycheck-add-mode 'scss-stylelint 'scss-mode)
 (flycheck-add-mode 'ruby-rubocop 'ruby-mode)
 (flycheck-add-mode 'python-flake8 'python-mode)
@@ -334,6 +335,7 @@
           '(json-jsonlist)))
 
 ;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
 (setq magit-save-repository-buffers nil)
 
 ;; Multiple-Cursors
@@ -346,3 +348,9 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop")
+
+
+;; ruby-mode NO coding: UTF8
+(setq ruby-insert-encoding-magic-comment nil)
