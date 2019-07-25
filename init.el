@@ -179,7 +179,7 @@
    "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(setq markdown-command "pandoc -c ~/github-pandoc.css -s")
+(setq markdown-command "pandoc -c ~/.emacs.d/github-pandoc.css -s")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
