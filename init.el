@@ -94,7 +94,6 @@
 
 ;; Web Mode: Begin
 (require 'web-mode)
-(require 'vue-mode)
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
@@ -189,7 +188,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck markdown-preview-eww ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm exec-path-from-shell darkokai-theme))))
+    (flycheck markdown-preview-eww ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm exec-path-from-shell darkokai-theme))))
 
 ;;;; AutoComplete Family
 ;; Helm Mode
