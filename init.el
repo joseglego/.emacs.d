@@ -10,7 +10,6 @@
 
 ;; Basic: Theme
 (package-initialize)
-(require 'color-theme)
 (load-theme 'darkokai t)
 
 ;; Basic: Show line number
@@ -190,7 +189,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck markdown-preview-eww ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm exec-path-from-shell darkokai-theme color-theme))))
+    (flycheck markdown-preview-eww ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode vue-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm exec-path-from-shell darkokai-theme))))
 
 ;;;; AutoComplete Family
 ;; Helm Mode
