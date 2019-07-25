@@ -100,6 +100,7 @@
 (add-to-list 'auto-mode-alist '("\\.[ea]rb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[pdj]html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.pug\\'" . pug-mode))
 (add-to-list 'auto-mode-alist '("\\.[s]css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
@@ -188,7 +189,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck markdown-preview-eww ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm exec-path-from-shell darkokai-theme))))
+    (pug-mode flycheck markdown-preview-eww ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm exec-path-from-shell darkokai-theme))))
 
 ;;;; AutoComplete Family
 ;; Helm Mode
