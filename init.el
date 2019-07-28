@@ -309,7 +309,7 @@
           '(javascript-jshint)))
 
 ;; use eslint with web-mode for jsx files
-(add-to-list 'flycheck-checkers 'javascript-standard)
+(add-to-list 'flycheck-checkers 'javascript-eslint)
 (add-to-list 'flycheck-checkers 'scss-stylelint)
 (add-to-list 'flycheck-checkers 'ruby-rubocop)
 (add-to-list 'flycheck-checkers 'typescript-tslint)
@@ -317,9 +317,9 @@
 (add-to-list 'flycheck-checkers 'html-tidy)
 
 ;; use eslint with web-mode for jsx files
-(flycheck-add-mode 'javascript-standard 'web-mode)
-(flycheck-add-mode 'javascript-standard 'js2-mode)
-(flycheck-add-mode 'javascript-standard 'rjsx-mode)
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-mode 'javascript-eslint 'js2-mode)
+(flycheck-add-mode 'javascript-eslint 'rjsx-mode)
 (flycheck-add-mode 'scss-stylelint 'scss-mode)
 (flycheck-add-mode 'ruby-rubocop 'ruby-mode)
 (flycheck-add-mode 'python-flake8 'python-mode)
