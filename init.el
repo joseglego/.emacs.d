@@ -359,3 +359,11 @@
 
 ;; ruby-mode NO coding: UTF8
 (setq ruby-insert-encoding-magic-comment nil)
+
+;; Multi-Web-Mode
+(setq mweb-default-major-mode 'web-mode)
+(setq mweb-tags '((web-mode "<template>" "</template>")
+                  (js2-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+                  (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
+(setq mweb-filename-extensions '("htm" "html" "ctp" "phtml" "vue"))
+(multi-web-global-mode 1)
