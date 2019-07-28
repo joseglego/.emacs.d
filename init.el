@@ -56,15 +56,6 @@
   (setq web-mode-enable-current-column-highlight t)
 )
 
-;; WebMode: Emmet-Hook
-(add-hook 'web-mode-before-auto-complete-hooks
-          '(lambda ()
-             (let ((web-mode-cur-language
-                    (web-mode-language-at-pos)))
-               (if (string= web-mode-cur-language "css")
-                   (setq emmet-use-css-transform t)
-                 (setq emmet-use-css-transform nil)))))
-
 ;; Indent
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
@@ -79,15 +70,6 @@
 (setq typescript-indent-level 2)
 (setq scss-indent-offset 2)
 (setq json-reformat:indent-width 2)
-
-(add-hook 'web-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'html-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'web-mode-hook 'my-web-mode-hook)
-(add-hook 'web-mode-hook 'emmet-mode)
-(add-hook 'rjsx-mode-hook 'emmet-mode)
-
-(setq emmet-expand-jsx-className? t) ;; default nil
-(setq emmet-preview-default t)
 
 (add-hook 'web-mode-hook 'rainbow-mode)
 (add-hook 'web-mode-hook 'rainbow-mode)
@@ -180,3 +162,4 @@
 (require 'setup-flycheck)
 (require 'setup-show-hide)
 (require 'setup-powerline)
+(require 'setup-emmet)
