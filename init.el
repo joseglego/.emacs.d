@@ -1,12 +1,18 @@
+;;; init.el --- josegLEGO Emacs configuration
+;;
+;;; Commentary:
+;;
+;; It's my basic configuration for Emacs as text editor.
+;; It's mainly focus on Web Development with JS, Vue/React, RoR/Django/Node
+;;
+;;; Code:
+
+(setq lego-packages (expand-file-name "lego-packages.el" user-emacs-directory))
+(load lego-packages)
+
 ;; Basic: User
 (setq user-full-name "Jose Lezama")
 (setq user-mail-address "me@joseglego.io")
-
-;; Basic: Packages
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 ;; Basic: Theme
 (package-initialize)
@@ -192,15 +198,6 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (setq markdown-command "pandoc -c ~/.emacs.d/github-pandoc.css -s")
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (pug-mode flycheck markdown-preview-eww ac-python ac-html ac-emmet ac-js2 react-snippets multiple-cursors scss-mode yaml-mode js-doc magit-gitflow web-mode typescript-mode rbenv powerline multi-web-mode json-mode js2-mode helm exec-path-from-shell darkokai-theme))))
-
 ;;;; AutoComplete Family
 ;; Helm Mode
 (require 'helm)
@@ -355,7 +352,6 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop")
-
 
 ;; ruby-mode NO coding: UTF8
 (setq ruby-insert-encoding-magic-comment nil)
