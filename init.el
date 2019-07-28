@@ -91,23 +91,31 @@
 ;; Execute shell
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
-
-;; Web Mode: Begin
+;; Define Major mode for Web Dev
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[ea]rb\\'" . web-mode))
+;; HTML/SCSS
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[pdj]html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.pug\\'" . pug-mode))
 (add-to-list 'auto-mode-alist '("\\.[s]css\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+
+;; JS
+(add-to-list 'auto-mode-alist '("\\.js[x]\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . js2-mode))
+
+;; .eslintrc
+(add-to-list 'auto-mode-alist '("\\.eslintrc\\'" . json-mode))
+
+;; Ruby
+(add-to-list 'auto-mode-alist '("\\.[ea]rb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.axlsx\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.builder\\'" . ruby-mode))
+
+;; Not Common
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
 
 ;; WebMode: Style-Gook
 (defun my-web-mode-hook ()
@@ -282,10 +290,6 @@
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
-
-;; Associates json-mode to all .eslintrc files
-(add-to-list 'auto-mode-alist '("\\.eslintrc\\'" . json-mode))
-(add-to-list 'auto-mode-alist '("\\.eslintrc\\'" . rjsx-mode))
 
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
   (if (equal web-mode-content-type "js")
