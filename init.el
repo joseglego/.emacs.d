@@ -10,45 +10,14 @@
 (setq lego-packages (expand-file-name "lego-packages.el" user-emacs-directory))
 (load lego-packages)
 
+(setq lego-ui (expand-file-name "lego-ui.el" user-emacs-directory))
+(load lego-ui)
+
+(package-initialize)
+
 ;; Basic: User
 (setq user-full-name "Jose Lezama")
 (setq user-mail-address "me@joseglego.io")
-
-;; Basic: Theme
-(package-initialize)
-(load-theme 'darkokai t)
-
-;; Basic: Show line number
-(global-linum-mode 1)
-(line-number-mode 1) 
-
-;; Basic: Show column number
-(column-number-mode 1) 
-
-;; Basic: NO scrollbar, NO toolbar NO menubar
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-
-;; Basic: Load mouse wheel
-(mwheel-install)  
-
-;; Basic: Doesn't show the nouse on the buffers 
-(mouse-avoidance-mode "animate")
-
-;; Basic: Delete the selected element if paste while it's selected
-(delete-selection-mode 1) 
-
-;; Basic: Move Between buffers using shift+arrow
-(windmove-default-keybindings)
-
-;; Basic: Electric pair mode
-(electric-pair-mode 1)
-(push '(?\' . ?\') electric-pair-pairs)
-(push '(?\` . ?\`) electric-pair-pairs)
-
-;; Basic: Hightlight parenthesis that closes/opens the selected parenthesis
-(show-paren-mode 1) 
 
 ;; Basic: Set F5 as Go-To  Line 
 (global-set-key [f5] 'goto-line)
@@ -60,9 +29,6 @@
 (require 'magit-gitflow)
 (global-set-key [f7] 'magit-status)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
-
-;; Basic: Turn off bugging yes-or-no-p
-(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Basic: WhiteSpace Cleanup
 (global-whitespace-cleanup-mode)
