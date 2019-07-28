@@ -200,49 +200,9 @@
 
 (put 'downcase-region 'disabled nil)
 
-;; Flycheck Family
-(require 'flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
-
-;; disable jshint since we prefer eslint checking
-(setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-          '(javascript-jshint)))
-
-;; use eslint with web-mode for jsx files
-(add-to-list 'flycheck-checkers 'javascript-eslint)
-(add-to-list 'flycheck-checkers 'scss-stylelint)
-(add-to-list 'flycheck-checkers 'ruby-rubocop)
-(add-to-list 'flycheck-checkers 'typescript-tslint)
-(add-to-list 'flycheck-checkers 'python-flake8)
-(add-to-list 'flycheck-checkers 'html-tidy)
-
-;; use eslint with web-mode for jsx files
-(flycheck-add-mode 'javascript-eslint 'web-mode)
-(flycheck-add-mode 'javascript-eslint 'js2-mode)
-(flycheck-add-mode 'javascript-eslint 'rjsx-mode)
-(flycheck-add-mode 'scss-stylelint 'scss-mode)
-(flycheck-add-mode 'ruby-rubocop 'ruby-mode)
-(flycheck-add-mode 'python-flake8 'python-mode)
-(flycheck-add-mode 'typescript-tslint 'typescript-mode)
-
-;; customize flycheck temp file prefix
-(setq-default flycheck-eslint-rules-directories '(""))
-
-;; customize flycheck temp file prefix
-(setq-default flycheck-temp-prefixs ".flycheck")
-(setq-default flycheck-stylelintrc ".stylelintrc")
-
-;; disable json-jsonlist checking for json files
-(setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-          '(json-jsonlist)))
-
 ;; Magit
 (setq magit-save-repository-buffers nil)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
-
-(setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop")
 
 ;; ruby-mode NO coding: UTF8
 (setq ruby-insert-encoding-magic-comment nil)
@@ -254,3 +214,11 @@
                   (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
 (setq mweb-filename-extensions '("htm" "html" "ctp" "phtml" "vue"))
 (multi-web-global-mode 1)
+
+(defvar setup-dir (expand-file-name "setup" user-emacs-directory)
+  "Directory containing core configuration.")
+
+(add-to-list 'load-path setup-dir)
+
+;; Require core config
+(require 'setup-flycheck)
