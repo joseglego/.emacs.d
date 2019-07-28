@@ -9,17 +9,16 @@
 
 (package-initialize)
 
-(setq lego-packages (expand-file-name "lego-packages.el" user-emacs-directory))
-(load lego-packages)
+(defvar core-dir (expand-file-name "core" user-emacs-directory)
+  "Directory containing core configuration.")
 
-(setq lego-ui (expand-file-name "lego-ui.el" user-emacs-directory))
-(load lego-ui)
+(add-to-list 'load-path core-dir)
 
-(setq lego-keybinding (expand-file-name "lego-keybinding.el" user-emacs-directory))
-(load lego-keybinding)
-
-(setq lego-core (expand-file-name "lego-core.el" user-emacs-directory))
-(load lego-core)
+;; Require core config
+(require 'lego-packages)
+(require 'lego-ui)
+(require 'lego-core)
+(require 'lego-keybinding)
 
 ;; Define Major mode for Web Dev
 (require 'web-mode)
