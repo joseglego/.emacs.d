@@ -154,9 +154,12 @@
 (add-hook 'web-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'html-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'web-mode-hook 'my-web-mode-hook)
-(add-hook 'web-mode-hook #'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
+(add-hook 'rjsx-mode-hook 'emmet-mode)
 
+(setq emmet-expand-jsx-className? t) ;; default nil
 (setq emmet-preview-default t)
+
 (add-hook 'web-mode-hook 'rainbow-mode)
 (add-hook 'web-mode-hook 'rainbow-mode)
 (add-hook 'scss-mode-hook 'rainbow-mode)
