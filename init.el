@@ -13,22 +13,14 @@
 (setq lego-ui (expand-file-name "lego-ui.el" user-emacs-directory))
 (load lego-ui)
 
+(setq lego-keybinding (expand-file-name "lego-keybinding.el" user-emacs-directory))
+(load lego-keybinding)
+
 (package-initialize)
 
 ;; Basic: User
 (setq user-full-name "Jose Lezama")
 (setq user-mail-address "me@joseglego.io")
-
-;; Basic: Set F5 as Go-To  Line 
-(global-set-key [f5] 'goto-line)
-
-;; F6 = browse-url-of-file
-(global-set-key [f6] 'browse-url-of-file)
-
-;; F7: Magit
-(require 'magit-gitflow)
-(global-set-key [f7] 'magit-status)
-(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
 ;; Basic: WhiteSpace Cleanup
 (global-whitespace-cleanup-mode)
@@ -136,9 +128,6 @@
 (add-hook 'scss-mode-hook 'rainbow-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
 
-;; NeoTree
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
@@ -165,20 +154,6 @@
 (setq markdown-command "pandoc -c ~/.emacs.d/github-pandoc.css -s")
 
 ;;;; AutoComplete Family
-;; Helm Mode
-(require 'helm)
-(require 'helm-config)
-
-(with-eval-after-load "helm"
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action))
-
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-i") 'helm-swoop)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-x r b") 'helm-bookmarks)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;;; yasnippet
 ;;; should be loaded before auto complete so that they can work together
@@ -200,11 +175,6 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/angular-snippets/snippets/")
 (add-to-list 'ac-modes 'angular-mode)
 (add-to-list 'ac-modes 'angular-html-mode)
-
-;; Lorem Ipsum
-(global-set-key (kbd "C-c l s") 'lorem-ipsum-insert-sentences)
-(global-set-key (kbd "C-c l p") 'lorem-ipsum-insert-paragraphs)
-(global-set-key (kbd "C-c l l") 'lorem-ipsum-insert-list)
 
 ;; Activate Show&Hide Minor Mode!
 (defun toggle-selective-display (column)
@@ -303,19 +273,8 @@
           '(json-jsonlist)))
 
 ;; Magit
-(global-set-key (kbd "C-x g") 'magit-status)
 (setq magit-save-repository-buffers nil)
-
-;; Multiple-Cursors
-(require 'multiple-cursors)
-;; When you have an active region that spans multiple lines, the following will add a cursor to each line:
-
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-;; When you want to add multiple cursors not based on continuous lines, but based on keywords in the buffer, use:
-
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
 (setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop")
 
