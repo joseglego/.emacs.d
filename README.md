@@ -1,7 +1,7 @@
 # .emacs
 
 # What is it?
-I'm a web developer specialized in frontend. But, usually, I work backend too. So, my `.emacs` is focused on _HTML_, _JavaScript_, _CSS_ (_SCSS_) & Backend with _Django_ (_python_) or _Rails_ (_ruby_)
+I'm a web developer specialized in frontend. But, usually, I work backend too. So, my `.emacs` is focused on _HTML_, _JavaScript_, _React/Vue_, _CSS_ (_SCSS_) & Backend with _Django/Rails/Node_)
 
 
 Here you can find my `.emacs` (or `.emacs.d/init.el`) & its structure folder. Plus, you will find each element to insall and a link to it. So, you can check and add whatever you want to your .emcas.
@@ -15,12 +15,15 @@ The folder structure of my `.emacs.d/` folder is:
 
 ``` sh
 /.emac.d/                # This folder
-  ac-dict/               # The customs auto-complete dictionaries
-  elpa/                  # The installed packages using melpa (All / Most of them)
-  plugins/               # The installed plugions
+  core/                  # The custom snippets
+    core.el              # General configuration
+    keybinding.el        # Global key-bindings
+    package.el           # List of Packages and auto-install
+    ui.el                # Configuration of the interface
+  setup/                 # Configuration of modes
   snippets/              # The custom snippets
-  init.el                # file in the repo
-  github-pandoc.css      # file in the repo
+  init.el                # Core Definition
+  github-pandoc.css      # GitHub css for markdown files
 ```
 
 ## Included Modes
@@ -71,10 +74,6 @@ All my dowloaded snippets are from: [Azer's Yasnippets] and currently, I have in
 - objc-mode
 - ruby-mode
 - web-mode
-
-## ToDo:
-- Auto-Install packages
-- Auto-Complete (Angular, Bootsptrap & FA)
 
 [emmet-mode]: <https://github.com/smihica/emmet-mode>
 [js2-mode]: <https://github.com/mooz/js2-mode>
