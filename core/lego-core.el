@@ -40,7 +40,23 @@
 
 (put 'downcase-region 'disabled nil)
 
+;; company-mode
+(require 'company)
+(require 'company-tern)
 (add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends 'company-tern)
+
+;;; yasnippet
+(require 'yasnippet)
+(require 'react-snippets)
+(yas-global-mode 1)
+
+;; yaml-mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+
+;; Magit
+(setq magit-save-repository-buffers nil)
+(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
 (provide 'lego-core)

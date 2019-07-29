@@ -9,10 +9,15 @@
 
 (package-initialize)
 
+;; Define Folders
 (defvar core-dir (expand-file-name "core" user-emacs-directory)
   "Directory containing core configuration.")
+(defvar setup-dir (expand-file-name "setup" user-emacs-directory)
+  "Directory containing modes configuration.")
 
+;; Define packages from Folders
 (add-to-list 'load-path core-dir)
+(add-to-list 'load-path setup-dir)
 
 ;; Require core config
 (require 'lego-packages)
@@ -20,27 +25,7 @@
 (require 'lego-core)
 (require 'lego-keybinding)
 
-;;;; AutoComplete Family
-
-;;; yasnippet
-;;; should be loaded before auto complete so that they can work together
-(require 'yasnippet)
-(require 'react-snippets)
-(yas-global-mode 1)
-
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
-
-;; Magit
-(setq magit-save-repository-buffers nil)
-(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
-
-(defvar setup-dir (expand-file-name "setup" user-emacs-directory)
-  "Directory containing core configuration.")
-
-(add-to-list 'load-path setup-dir)
-
-;; Require core config
+;; Require modes config
 (require 'setup-web-mode)
 (require 'setup-js-mode)
 (require 'setup-rb-mode)
