@@ -17,7 +17,8 @@
 
 ;; LEGO Packages
 (setq package-selected-packages
-      '(js2-refactor
+      '(lorem-ipsum
+        js2-refactor
         xref-js2
 	company
 	company-tern
