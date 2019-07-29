@@ -35,4 +35,9 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+(put 'downcase-region 'disabled nil)
+
 (provide 'lego-core)

@@ -20,9 +20,6 @@
 (require 'lego-core)
 (require 'lego-keybinding)
 
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)
@@ -62,8 +59,6 @@
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
-
-(put 'downcase-region 'disabled nil)
 
 ;; Magit
 (setq magit-save-repository-buffers nil)
