@@ -20,13 +20,6 @@
 (require 'lego-core)
 (require 'lego-keybinding)
 
-;; Markdown
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(setq markdown-command "pandoc -c ~/.emacs.d/github-pandoc.css -s")
-
 ;;;; AutoComplete Family
 
 ;;; yasnippet
@@ -73,6 +66,7 @@
 (require 'setup-web-mode)
 (require 'setup-js-mode)
 (require 'setup-rb-mode)
+(require 'setup-markdown-mode)
 
 (require 'setup-flycheck)
 (require 'setup-show-hide)
