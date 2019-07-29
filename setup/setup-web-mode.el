@@ -28,6 +28,7 @@
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-script-padding 2)
 (setq scss-indent-offset 2)
+(setq pug-tab-width 2)
 
 ;; rainbow mode for colors
 (add-hook 'web-mode-hook 'rainbow-mode)
