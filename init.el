@@ -43,13 +43,6 @@
 (add-to-list 'ac-modes 'angular-mode)
 (add-to-list 'ac-modes 'angular-html-mode)
 
-;; Basic: JSDoc Mode
-(require 'js-doc)
-(setq js-doc-mail-address "me@joseglego.io"
-       js-doc-author (format "Jose Lezama <%s>" js-doc-mail-address)
-       js-doc-url "joseglego.io"
-       js-doc-license "MIT")
-
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
