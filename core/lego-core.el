@@ -40,4 +40,7 @@
 
 (put 'downcase-region 'disabled nil)
 
+(add-hook 'after-init-hook 'global-company-mode)
+(add-to-list 'company-backends 'company-tern)
+
 (provide 'lego-core)

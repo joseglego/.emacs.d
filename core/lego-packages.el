@@ -17,17 +17,17 @@
 
 ;; LEGO Packages
 (setq package-selected-packages
-      '(manage-minor-mode
+      '(js2-refactor
+        xref-js2
+	company
+	company-tern
+	manage-minor-mode
 	rjsx-mode
 	pug-mode
 	flycheck
 	markdown-preview-eww
 	markdown-mode
-	ac-python
-	ac-html
-	ac-emmet
 	emmet-mode
-	ac-js2
 	react-snippets
 	multiple-cursors
 	scss-mode

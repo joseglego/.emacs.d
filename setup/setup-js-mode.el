@@ -28,4 +28,15 @@
         ad-do-it)
     ad-do-it))
 
+(require 'company)
+(require 'company-tern)
+
+(add-hook 'js2-mode-hook (lambda ()
+                           (tern-mode)
+                           (company-mode)))
+
+(add-hook 'rjsx-mode-hook (lambda ()
+                           (tern-mode)
+                           (company-mode)))
+
 (provide 'setup-js-mode)

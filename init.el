@@ -28,21 +28,6 @@
 (require 'react-snippets)
 (yas-global-mode 1)
 
-;;; auto complete mod
-;;; should be loaded after yasnippet so that they can work together
-(require 'auto-complete)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/snippets")
-(ac-config-default)
-(add-to-list 'ac-modes 'web-mode)
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
-
-;; AngularJS: AutoComplete
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/angular-snippets/snippets/")
-(add-to-list 'ac-modes 'angular-mode)
-(add-to-list 'ac-modes 'angular-html-mode)
-
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
