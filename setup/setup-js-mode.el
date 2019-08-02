@@ -1,5 +1,6 @@
 ;; JS & TypeScript
-(add-to-list 'auto-mode-alist '("\\.js[x]\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . js2-mode))
 
