@@ -17,7 +17,8 @@
 
 ;; LEGO Packages
 (setq package-selected-packages
-      '(lorem-ipsum
+      '(flow-minor-mode
+        lorem-ipsum
         js2-refactor
         xref-js2
 	company

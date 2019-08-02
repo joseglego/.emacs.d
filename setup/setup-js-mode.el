@@ -39,4 +39,7 @@
                            (tern-mode)
                            (company-mode)))
 
+(add-hook 'js2-mode-hook 'flow-minor-mode)
+(add-hook 'rjsx-mode-hook 'flow-minor-mode)
+
 (provide 'setup-js-mode)
