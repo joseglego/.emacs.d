@@ -17,7 +17,8 @@
 
 ;; LEGO Packages
 (setq package-selected-packages
-      '(flow-minor-mode
+      '(smartparens
+        flow-minor-mode
         lorem-ipsum
         js2-refactor
         xref-js2

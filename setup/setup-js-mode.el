@@ -34,10 +34,12 @@
 
 (add-hook 'js2-mode-hook (lambda ()
                            (tern-mode)
-                           (company-mode)))
+                           (company-mode)
+                           (smartparens-mode)))
 
 (add-hook 'rjsx-mode-hook (lambda ()
                            (tern-mode)
-                           (company-mode)))
+                           (company-mode)
+                           (smartparens-mode)))
 
 (provide 'setup-js-mode)

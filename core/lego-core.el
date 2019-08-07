@@ -59,4 +59,7 @@
 (setq magit-save-repository-buffers nil)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
+;; smartparens
+(require 'smartparens-config)
+
 (provide 'lego-core)
