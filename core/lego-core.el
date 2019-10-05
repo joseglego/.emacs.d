@@ -62,4 +62,17 @@
 ;; smartparens
 (require 'smartparens-config)
 
+;; Dashboard
+(require 'all-the-icons)
+(require 'dashboard)
+
+(dashboard-setup-startup-hook)
+(setq dashboard-startup-banner 'logo)
+(setq dashboard-items '((recents  . 10)
+                        (bookmarks . 5)
+                        (projects . 5)))
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+(setq show-week-agenda-p t)
+
 (provide 'lego-core)
