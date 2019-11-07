@@ -28,6 +28,7 @@
 ;; Require modes config
 (require 'setup-web-mode)
 (require 'setup-js-mode)
+(require 'setup-ts-mode)
 (require 'setup-rb-mode)
 (require 'setup-markdown-mode)
 

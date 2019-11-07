@@ -1,4 +1,4 @@
-;; JS & TypeScript
+;; JavaScript
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
@@ -13,8 +13,6 @@
 (setq web-mode-code-indent-offset 2)
 (setq js-indent-level 2)
 (setq js-highlight-level 3)
-(setq typescript-indent-offset 2)
-(setq typescript-indent-level 2)
 
 (setq json-reformat:indent-width 2)
 
