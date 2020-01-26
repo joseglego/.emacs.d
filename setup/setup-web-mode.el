@@ -5,6 +5,7 @@
 ;; Files
 (add-to-list 'auto-mode-alist '("\\.[pdj]html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.pug\\'" . pug-mode))
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[s]css\\'" . web-mode))
 
 ;; Not my Common languages
