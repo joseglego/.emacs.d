@@ -3,6 +3,8 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
 
 ;; .eslintrc
 (add-to-list 'auto-mode-alist '("\\.eslintrc\\'" . json-mode))
@@ -36,6 +38,11 @@
                            (smartparens-mode)))
 
 (add-hook 'rjsx-mode-hook (lambda ()
+                           (tern-mode)
+                           (company-mode)
+                           (smartparens-mode)))
+
+(add-hook 'typescript-mode-hook (lambda ()
                            (tern-mode)
                            (company-mode)
                            (smartparens-mode)))
