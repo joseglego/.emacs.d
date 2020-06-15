@@ -54,6 +54,8 @@
 	neotree
 	yasnippet
 	auto-complete
+	flycheck-kotlin
+	kotlin-mode
 	))
 (package-install-selected-packages)
 
