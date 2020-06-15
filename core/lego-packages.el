@@ -17,7 +17,10 @@
 
 ;; LEGO Packages
 (setq package-selected-packages
-      '(dashboard
+      '(dockerfile-mode
+        docker-compose-mode
+        docker
+        dashboard
         all-the-icons
         groovy-mode
         smartparens
