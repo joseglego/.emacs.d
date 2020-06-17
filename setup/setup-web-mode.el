@@ -6,7 +6,8 @@
 (add-to-list 'auto-mode-alist '("\\.[pdj]html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.pug\\'" . pug-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[s]css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[s]css\\'" . scss-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;; Not my Common languages
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -29,6 +30,7 @@
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-script-padding 2)
 (setq scss-indent-offset 2)
+(setq css-indent-offset 2)
 (setq pug-tab-width 2)
 
 ;; rainbow mode for colors
