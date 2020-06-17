@@ -17,7 +17,8 @@
 
 ;; LEGO Packages
 (setq package-selected-packages
-      '(dockerfile-mode
+      '(emojify
+        dockerfile-mode
         docker-compose-mode
         docker
         dashboard
