@@ -62,6 +62,10 @@
 ;; smartparens
 (require 'smartparens-config)
 
+;; Emojify
+(require 'emojify)
+(add-hook 'after-init-hook 'global-emojify-mode)
+
 ;; Dashboard
 (require 'all-the-icons)
 (require 'dashboard)
