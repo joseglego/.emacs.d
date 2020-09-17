@@ -10,6 +10,7 @@
         markdown-cycle
         markdown-outdent-or-delete
         ns-copy-including-secondary
+        rjsx-electric-gt
         rjsx-electric-lt
         write-file
         ))
@@ -17,7 +18,9 @@
 (setq mc/cmds-to-run-once
       '(
         beginning-of-buffer
+        electric-newline-and-maybe-indent
         handle-switch-frame
         helm-find-files
         mark-whole-buffer
+        mouse-set-region
         ))
