@@ -30,20 +30,20 @@
 (setq typescript-indent-level 2)
 
 ;; TSX
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-hook 'web-mode-hook
+(require 'typescript-mode)
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+(add-hook 'typescript-mode-hook
           (lambda ()
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
 
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
-(add-hook 'web-mode-hook
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+(add-hook 'typescript-mode-hook
           (lambda ()
             (when (string-equal "ts" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
 
 ;; enable typescript-tslint checker
-(flycheck-add-mode 'typescript-tslint 'web-mode)
+(flycheck-add-mode 'typescript-tslint 'typescript-mode)
 
 (provide 'setup-ts-mode)
