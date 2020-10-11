@@ -17,7 +17,8 @@
 
 ;; LEGO Packages
 (setq package-selected-packages
-      '(emojify
+      '(butler
+        emojify
         dockerfile-mode
         docker-compose-mode
         docker
