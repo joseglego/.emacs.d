@@ -30,20 +30,17 @@
     ad-do-it))
 
 (require 'company)
-(require 'company-tern)
+(require 'company-tabnine)
 
 (add-hook 'js2-mode-hook (lambda ()
-                           (tern-mode)
                            (company-mode)
                            (smartparens-mode)))
 
 (add-hook 'rjsx-mode-hook (lambda ()
-                           (tern-mode)
                            (company-mode)
                            (smartparens-mode)))
 
 (add-hook 'typescript-mode-hook (lambda ()
-                           (tern-mode)
                            (company-mode)
                            (smartparens-mode)))
 

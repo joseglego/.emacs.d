@@ -31,7 +31,7 @@
         js2-refactor
         xref-js2
 	company
-	company-tern
+	company-tabnine
 	manage-minor-mode
 	rjsx-mode
 	pug-mode
