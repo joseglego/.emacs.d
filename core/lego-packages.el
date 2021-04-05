@@ -17,7 +17,10 @@
 
 ;; LEGO Packages
 (setq package-selected-packages
-      '(projectile
+      '(lsp-mode
+        lsp-treemacs
+        helm-lsp
+        projectile
         butler
         emojify
         dockerfile-mode
