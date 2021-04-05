@@ -43,6 +43,9 @@
             (when (string-equal "ts" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
 
+(add-hook 'typescript-mode-hook (lambda ()
+                           (company-mode)
+                           (smartparens-mode)))
 ;; enable typescript-tslint checker
 (flycheck-add-mode 'typescript-tslint 'typescript-mode)
 
