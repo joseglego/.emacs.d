@@ -9,8 +9,8 @@
 
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-          '(javascript-jshint)))
+              (append flycheck-disabled-checkers
+                      '(javascript-jshint json-jsonlist)))
 
 ;; Define Flycheckers - Linters
 (add-to-list 'flycheck-checkers 'html-tidy)
@@ -45,4 +45,14 @@
 
 ;; Use correct version of rubocop
 (setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop")
+
+(eval-after-load 'js-mode
+  '(add-hook 'js-mode-hook #'add-node-modules-path))
+
+(eval-after-load 'js2-mode
+  '(add-hook 'js2-mode-hook #'add-node-modules-path))
+
+(eval-after-load 'rjsx
+  '(add-hook 'rjsx-hook #'add-node-modules-path))
+
 (provide 'setup-flycheck)

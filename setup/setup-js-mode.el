@@ -31,17 +31,24 @@
 
 (require 'company)
 (require 'company-tabnine)
+(require 'prettier-js)
 
 (add-hook 'js2-mode-hook (lambda ()
                            (company-mode)
-                           (smartparens-mode)))
+                           (smartparens-mode)
+                           (prettier-js-mode)
+))
 
 (add-hook 'rjsx-mode-hook (lambda ()
                            (company-mode)
-                           (smartparens-mode)))
+                           (smartparens-mode)
+                           (prettier-js-mode)
+))
 
 (add-hook 'typescript-mode-hook (lambda ()
                            (company-mode)
-                           (smartparens-mode)))
+                           (smartparens-mode)
+                           (prettier-js-mode)
+))
 
 (provide 'setup-js-mode)

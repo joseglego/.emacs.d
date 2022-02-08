@@ -17,7 +17,8 @@
 
 ;; LEGO Packages
 (setq package-selected-packages
-      '(lsp-mode
+      '(prettier-js
+        lsp-mode
         lsp-treemacs
         helm-lsp
         projectile

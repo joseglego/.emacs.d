@@ -45,7 +45,9 @@
 
 (add-hook 'typescript-mode-hook (lambda ()
                            (company-mode)
-                           (smartparens-mode)))
+                           (smartparens-mode)
+                           (prettier-js-mode)
+                           ))
 ;; enable typescript-tslint checker
 (flycheck-add-mode 'typescript-tslint 'typescript-mode)
 
